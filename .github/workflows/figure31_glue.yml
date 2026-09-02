@@ -1,5 +1,10 @@
 name: Figure31 GLUE real experiment
 on:
+  push:
+    branches: [figure31-experiment]
+    paths:
+      - "figure31_experiment/**"
+      - ".github/workflows/figure31_glue.yml"
   workflow_dispatch:
 jobs:
   run:
@@ -10,8 +15,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install torch transformers datasets evaluate accelerate scikit-learn pandas numpy matplotlib
-      - run: python figure31_experiment/run_glue_hpo.py --outdir figure31_results
+      - run: pip install torch transformers datasets scikit-learn pandas numpy matplotlib
+      - run: python figure31_experiment/run_glue_hpo.py
       - run: python figure31_experiment/render_figure31.py figure31_results/run_results.csv --out figure31_results/Figure31_GLUE.png
       - uses: actions/upload-artifact@v4
         with:

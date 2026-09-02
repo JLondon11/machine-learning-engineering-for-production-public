@@ -24,7 +24,7 @@ def metric(task,y,p):
  return accuracy_score(y,p),"accuracy"
 def one(c):
  task,lr,warm,batch,wd,s,factor=c; seed(s); dev=torch.device("cpu")
- ds=load_dataset("nyu-mll/glue",task); tok=AutoTokenizer.from_pretrained(MODEL)
+ ds=load_dataset("nyu-mll/glue",task); tok=AutoTokenizer.from_pretrained("bert-base-uncased")
  k1,k2=KEYS[task]
  tr=ds["train"].shuffle(seed=2026).select(range(min(2000,len(ds["train"]))))
  va=ds["validation"]

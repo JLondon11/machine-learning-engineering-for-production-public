@@ -17,7 +17,7 @@ def main():
     for path in (a.measurements,a.labels):
         if not path.is_file(): p.error(f"Real UCI file required: {path}")
     x=pd.read_csv(a.measurements,sep=r"\s+",header=None,na_values=["NaN"])
-    meta=pd.read_csv(a.labels,sep=r"\\s+",header=None)
+    meta=pd.read_csv(a.labels,sep=r"\s+",header=None)
     if x.shape != (1567,590): raise ValueError(f"Expected 1567x590 SECOM measurements; got {x.shape}")
     if meta.shape[0] != 1567 or not set(meta.iloc[:,0].unique()) <= {-1,1}:
         raise ValueError("Invalid original UCI labels")

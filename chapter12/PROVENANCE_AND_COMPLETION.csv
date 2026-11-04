@@ -1,0 +1,8 @@
+Section,Empirical input present,Measured result generated,Code committed,Publication QA status
+distributed_training,yes,yes,yes,published aggregate reproduction only
+intelligent_manufacturing,no,no,yes,blocked pending real raw SECOM data
+telecommunications,no,no,yes,blocked pending real network traces and labels
+pharmaceutical,no,no,yes,blocked pending experimental assay records
+clinical_imaging,no,no,yes,blocked pending genuine adjudicated external-site predictions
+geospatial_fleet,no,no,yes,blocked pending official NYC TLC Parquet
+existing_39_manuscript_listings,not_applicable,not_applicable,no,pending individual review and safe publication

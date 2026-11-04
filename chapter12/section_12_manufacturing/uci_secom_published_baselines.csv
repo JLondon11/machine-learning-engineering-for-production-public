@@ -1,0 +1,7 @@
+feature_selection,balanced_error_rate_percent,ber_sd_percent,true_positive_percent,tp_sd_percent,true_negative_percent,tn_sd_percent
+S2N,34.5,2.6,57.8,5.3,73.1,2.1
+Ttest,33.7,2.1,59.6,4.7,73.0,1.8
+Relief,40.1,2.8,48.3,5.9,71.6,2.3
+Pearson,34.1,2.0,57.4,4.3,74.4,4.9
+Ftest,33.5,2.2,59.1,4.8,73.8,1.8
+Gram Schmidt,35.6,2.4,51.2,11.8,77.5,2.3

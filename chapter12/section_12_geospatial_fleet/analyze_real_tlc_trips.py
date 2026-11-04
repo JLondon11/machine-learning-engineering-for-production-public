@@ -22,7 +22,9 @@ def main():
     assert len(d)>=1000
     d["hour"]=pd.to_datetime(d.tpep_pickup_datetime).dt.hour
     d["weekday"]=pd.to_datetime(d.tpep_pickup_datetime).dt.dayofweek
-    features=["trip_distance","PULocationID","DOLocationID","hour","weekday"]
+    # Recorded trip_distance becomes known only after the trip.
+    # Dispatch-time features are limited to locations and pickup time.
+    features=["PULocationID","DOLocationID","hour","weekday"]
     n=int(.8*len(d));tr,te=d.iloc[:n],d.iloc[n:]
     models={"median baseline":DummyRegressor(strategy="median"),"gradient-boosted ETA":HistGradientBoostingRegressor(max_iter=110,random_state=42)}
     fig,ax=plt.subplots(figsize=(6,4),dpi=180);rows=[]
